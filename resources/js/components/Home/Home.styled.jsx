@@ -6,19 +6,30 @@ const StyledHome = styled.div`
     section {
         position: relative;
         display: block;
+        .peta-sebaran {
+            overflow: hidden;
+            height: 200px;
+            width: 80%;
+            margin: auto;
+            border-radius: 20px;
+        }
         .sk {
             display: flex;
             flex-shrink: 0;
             flex-direction: column;
-            justify-content: start;
+            justify-content: center;
+            align-items: stretch;
+            width: 80%;
         }
         .card {
+            align-items: center;
             h2 {
                 position: relative;
                 border-radius: 45px 5px 45px 5px;
                 top: -35px;
                 height: 3rem;
                 width: 3rem;
+                background-image: linear-gradient(to bottom, #0f6e11, #81ff3d);
             }
             span {
                 position: relative;
@@ -28,6 +39,19 @@ const StyledHome = styled.div`
     }
     @media (min-width: 768px) {
         section {
+            .peta-sebaran {
+                padding: 1rem;
+                height: 360px;
+                width: 90%;
+            }
+            .sk {
+                display: flex;
+                flex-shrink: 0;
+                flex-direction: column;
+                justify-content: start;
+                height: auto;
+                width: 33.33333%;
+            }
             .card {
                 h2 {
                     position: relative;
@@ -36,11 +60,6 @@ const StyledHome = styled.div`
                     height: 4rem;
                     width: 4rem;
                     font-size: 1.5rem;
-                    background-image: linear-gradient(
-                        to bottom,
-                        #0f6e11,
-                        #81ff3d
-                    );
                 }
                 span {
                     position: relative;
@@ -51,6 +70,11 @@ const StyledHome = styled.div`
     }
     @media (min-width: 992px) {
         section {
+            .peta-sebaran {
+                height: 400px;
+                width: 75%;
+                padding: 0rem;
+            }
             .card {
                 h2 {
                     position: relative;
@@ -72,6 +96,10 @@ const StyledHome = styled.div`
                 }
             }
         }
+    }
+    .leaflet-container {
+        height: 100vh;
+        width: 100%;
     }
 `;
 
