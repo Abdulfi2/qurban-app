@@ -42,6 +42,7 @@
         "flowbite-react": "^0.4.10",
         "leaflet": "^1.9.4",
         "react-leaflet": "^4.2.1",
-        "styled-components": "^6.0.2"
+        "styled-components": "^6.0.2",
+        "swiper": "^10.0.4"
     }
 }

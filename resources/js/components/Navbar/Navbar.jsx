@@ -1,7 +1,7 @@
 import React from "react";
 import StyledNavbar from "./Navbar.styled";
 import { IconMenu2 } from "@tabler/icons-react";
-// import { IconMenu2 } from "@tabler/icons-react";
+import { Link } from "@inertiajs/react";
 
 export default function Navbar() {
     const toggleNavbar = () => {
@@ -18,12 +18,12 @@ export default function Navbar() {
         <StyledNavbar className="shadow-lg">
             <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-                    <a href="#" className="flex items-center gap-2">
-                        <img src="images/favicon.png" alt="Flowbite Logo" />
+                    <Link to="/" className="flex items-center gap-2">
+                        <img src="images/favicon.png" alt="Zakat Sukses Logo" />
                         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                             Zakat Sukses
                         </span>
-                    </a>
+                    </Link>
                     <button
                         data-collapse-toggle="navbar-multi-level"
                         type="button"
@@ -40,53 +40,53 @@ export default function Navbar() {
                     >
                         <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                     aria-current="page"
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/Menu/FormQurban"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Form Qurban
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/Menu/Tabungan"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Tabungan
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/Menu/Faq"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     FAQ
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/Menu/Program"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Program
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/Menu/Galeri"
                                     className="block py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-lime-700 md:p-0 dark:text-white md:dark:hover:text-lime-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Galeri
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
