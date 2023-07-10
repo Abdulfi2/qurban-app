@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -11,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,5 +26,20 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function home()
+    {
+        $data = [];
+
+        for ($i = 1; $i <= 9; $i++) {
+            $product = Product::with('galleries')->find($i);
+
+            if ($product) {
+                $data["data{$i}"] = $product->toArray();
+            }
+        }
+
+        return Inertia::render('Homepage', ['data' => $data]);
     }
 }
