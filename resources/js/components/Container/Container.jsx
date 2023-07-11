@@ -7,7 +7,7 @@ function Container(props) {
             {...props}
             className={clsx(
                 className,
-                "container mx-auto place-content-center"
+                "container w-screen mx-auto place-content-center"
             )}
         ></div>
     );

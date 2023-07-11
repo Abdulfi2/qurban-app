@@ -6,6 +6,9 @@ const StyledHome = styled.div`
     section {
         position: relative;
         display: block;
+        .hr_bor {
+            border-top: 20px dotted white;
+        }
         .peta-sebaran {
             overflow: hidden;
             height: 200px;

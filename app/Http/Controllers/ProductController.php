@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,6 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+        return view('pages.admin.product.create');
     }
 
     /**
@@ -35,9 +35,13 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $data =  $request->all;
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        Product::create($data);
+        return redirect()->route('product.index');
     }
 
     /**
@@ -59,7 +63,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Product::findOrFail($id);
+
+        return view('pages.admin.product.edit', [
+            'item' => $item
+        ]);
     }
 
     /**
@@ -69,9 +77,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $item = Product::findOrFail($id);
+
+        $item->update($data);
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -82,6 +96,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Product::findorFail($id);
+        $item->delete();
+
+        return redirect()->route('product.index');
     }
 }

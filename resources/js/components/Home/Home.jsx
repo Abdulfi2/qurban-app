@@ -17,7 +17,7 @@ export default function Home(props) {
             <img src="images/header.png" alt="placeholder" />
             <ReportQurban />
             <Jumbotron />
-            <ProductList product={props.product} />
+            <ProductList />
             <Galeri />
             <Comment />
             <Rekening />
